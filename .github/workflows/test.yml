@@ -56,5 +56,5 @@ jobs:
       - name: Upload signed APK
         uses: actions/upload-artifact@v2
         with:
-          name: app-release.apk
-          path: /home/runner/work/testing/testing/launcher/build/outputs/apk/release/app-release.apk
+          name: apk
+          path: /home/runner/work/testing/testing/launcher/build/outputs/apk/release
