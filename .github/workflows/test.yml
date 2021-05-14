@@ -36,9 +36,7 @@ jobs:
         #sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;19.2.5345600" --sdk_root=${ANDROID_SDK_ROOT}
       - name: Output version code
         run: echo VERSION_CODE=${{ github.run_number }} > ./version.properties
-      - name: Info
-        run: |  
-              sh ./info.sh
+      
       - name: Build with Gradle
         run: |
           sudo gradle wrapper --gradle-version 5.6.4 --stacktrace 
@@ -56,3 +54,6 @@ jobs:
           sudo ./gradlew assembleRelease 
           echo "======================./gradlew assembleRelease=================="      
  
+      - name: Info
+        run: |  
+              sh ./info.sh
