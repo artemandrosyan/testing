@@ -39,5 +39,20 @@ jobs:
       - name: Info
         run: |  
               sh ./info.sh
-              
+      - name: Build with Gradle
+        run: |
+          sudo gradle wrapper --gradle-version 5.6.4 --stacktrace 
+          echo "=================gradle wrappe======================="
+          sudo chmod +x ./gradlew
+          echo "====================chmod +x ./gradlew===================="
+          sudo ./gradlew init
+          echo "====================chmod +x ./gradlew===================="
+          sudo ./gradlew clean
+          echo "====================./gradlew init===================="
+          sudo ./gradlew test
+          echo "======================./gradlew test=================="
+          sudo ./gradlew bundleRelease
+          echo "=======================./gradlew bundleRelease================="
+          sudo ./gradlew assembleRelease 
+          echo "======================./gradlew assembleRelease=================="      
  
