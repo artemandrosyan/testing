@@ -18,7 +18,7 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 29
-        applicationId 'com.DefaultCompany.testexport'
+        applicationId 'com.DefaultCompany.ShopProject'
         ndk {
             abiFilters 'armeabi-v7a'
         }
@@ -31,21 +31,30 @@ android {
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('/github/workspace/test-project/user.keystore')
+            storePassword ''
+            keyAlias '123456'
+            keyPassword ''
+        }
+    }
+
     lintOptions {
         abortOnError false
     }
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt')
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             jniDebuggable true
         }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt')
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 
