@@ -33,7 +33,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('/github/workspace/test-project/user.keystore')
+            storeFile file('./user.keystore')
             storePassword ''
             keyAlias '123456'
             keyPassword ''
